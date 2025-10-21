@@ -5,11 +5,26 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-00C7B7.svg)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/docker-ready-2496ED.svg)](https://www.docker.com/)
 
-**The World's First Transparent Multi-Agent Clinical Intelligence System**
+**Transparent Multi-Agent Clinical Decision Support System**
 
-16 specialized medical AI agents working in orchestrated workflow to provide comprehensive clinical analysis with complete transparency, evidence-based recommendations, and triple quality assurance.
+A research prototype featuring 16 specialized clinical modules working in coordinated workflow to provide comprehensive clinical analysis with complete transparency, evidence-based recommendations, and triple quality validation.
+
+**⚕️ IMPORTANT:** This is a research system for validation purposes only. Requires physician review of all recommendations. Seeking IRB-approved clinical validation partnerships.
 
 [🎥 Watch Demo](test-ui.html) | [📚 Pitch Deck](PITCH_DECK.md) | [🚀 Quick Start](QUICKSTART.md) | [📖 Technical FAQ](TECHNICAL_FAQ.md)
+
+---
+
+## ⚠️ Medical Disclaimer
+
+This system provides clinical decision SUPPORT only. It is:
+- ✅ Designed for research and validation
+- ✅ Requires physician review and approval
+- ✅ Not FDA-cleared for clinical use
+- ✅ Not a substitute for clinical judgment
+- ❌ NOT for autonomous decision-making
+
+**Status:** Research prototype seeking academic medical center partnerships for IRB-approved validation studies.
 
 ---
 
@@ -25,11 +40,12 @@
 
 ## 🌟 Key Features
 
-### Multi-Agent Architecture
-- **16 Specialized Medical AI Agents** working in coordinated workflow
-- Real-time agent orchestration with live progress visualization
-- Parallel and sequential execution for optimal performance
-- Confidence scoring and quality assurance at every step
+### Multi-Module Clinical Architecture
+- **16 Specialized Clinical Modules** working in coordinated workflow
+- Real-time execution with live progress visualization
+- Parallel and sequential processing for optimal performance
+- Confidence scoring and quality validation at every step
+- Complete audit trail for clinical accountability
 
 ### Clinical Capabilities
 - **Comprehensive Intake**: Structured clinical data collection (HPI, PMH, medications, vitals)

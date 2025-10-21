@@ -1,4 +1,16 @@
-# MedicalCopilot AI - Pitch Deck
+# MedicalCopilot AI - Clinical Decision Support System
+
+## ⚕️ Important Medical Disclaimer
+
+**This system is for research and validation purposes only.**
+
+- ✅ Designed as clinical decision SUPPORT, not decision-making
+- ✅ All recommendations require physician review and approval
+- ✅ Seeking clinical validation through IRB-approved research studies
+- ✅ Pursuing FDA clearance before commercial deployment
+- ✅ Not intended to replace physician judgment or clinical examination
+
+**Status:** Research prototype seeking academic medical center partnerships for clinical validation.
 
 ---
 
@@ -18,14 +30,16 @@
 
 ## 💡 The Solution: MedicalCopilot AI
 
-**The world's first transparent multi-agent clinical intelligence system**
+**A transparent multi-agent clinical decision support system**
 
-### Revolutionary Architecture:
-- **16 Specialized Medical AI Agents** working in orchestrated workflow
-- **Real-Time Transparency** - Watch every step of AI reasoning
-- **Triple Quality Assurance** - Fact-checking, safety review, ethics validation
-- **Evidence-Based** - All recommendations backed by medical literature
-- **Production-Ready** - Enterprise deployment infrastructure included
+### Clinical-First Architecture:
+- **16 Specialized Clinical Modules** working in coordinated workflow
+- **Complete Transparency** - Physicians see all reasoning steps and confidence scores
+- **Triple Clinical Validation** - Automated fact-checking, safety review, and ethics validation
+- **Evidence-Based Medicine Integration** - All recommendations linked to peer-reviewed literature
+- **HIPAA-Compliant Design** - Enterprise security and audit infrastructure
+
+**Note:** This system provides clinical decision *support* only. All recommendations require physician review and approval. The system augments, never replaces, clinical judgment.
 
 ---
 
@@ -415,11 +429,13 @@ We believe physicians should be able to:
 
 ## Contact
 
-**Project Lead:** [Your Name]
-**Email:** [Your Email]
-**Location:** Katy, Texas (Houston Area)
+**Developer & Researcher:** Oluwafemi Idiakhoa
+**Location:** Katy, Texas (Houston Medical Center Area)
 **GitHub:** https://github.com/oluwafemidiakhoa/MedicalCopilot-AI
-**LinkedIn:** [Your LinkedIn]
+**Email:** Available via GitHub
+
+**For Clinical Partnerships:**
+Seeking collaborations with academic medical centers, clinical informaticists, and medical AI researchers for validation studies and regulatory pathway consultation.
 
 ---
 
