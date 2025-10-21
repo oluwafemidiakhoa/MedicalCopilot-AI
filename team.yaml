@@ -1,0 +1,69 @@
+version: "2"
+
+agents:
+  # Entry point
+  # Root orchestrator agent
+  root:
+    model: openai/gpt-4o-mini
+    description: Orchestrates intake → researcher/analyst → writer → safety and stitches context.
+    # The root agent acts as the "team lead" for the other agents.
+    instruction: |
+      1. Plan the task. Ask intake agent to structure the user's query.
+      2. Check if an image was provided.
+         - If yes, send the image and intake notes to the dermatology_analyst.
+         - In parallel, send the intake notes to the researcher for general info.
+      3. Pass all notes (intake, research, visual analysis) to the writer.
+      Pass notes to writer for a patient-friendly guide.
+      Send the draft to safety for risk/fact checks and disclaimers.
+      Return a concise final answer with source links.
+    sub_agents: ["intake", "researcher", "dermatology_analyst", "writer", "safety"]
+
+  intake:
+    model: openai/gpt-4o-mini
+    description: Structure user info without collecting sensitive PII.
+    instruction: |
+      Extract: main concern, age range, duration, key symptoms, known conditions,
+      and meds/allergies IF volunteered. Do not request identifiers (name, exact address, etc.).
+      Output a compact JSON object under the key "intake".
+
+  researcher:
+    model: openai/gpt-4o-mini
+    description: Gather conservative medical facts with citations.
+    instruction: |
+      Prefer consensus sources (CDC, NIH/MedlinePlus, WHO). Avoid ads and fringe sites.
+      Produce 6–10 bullets with short quotes and links. If unsure, be conservative.
+    toolsets:
+      - type: mcp
+        ref: docker:duckduckgo/search
+
+  dermatology_analyst:
+    model: openai/gpt-4o
+    description: Analyzes skin condition images. Not a diagnosis.
+    instruction: |
+      From the image, describe visual characteristics:
+      - Color (redness, discoloration)
+      - Shape and border (e.g., irregular, defined)
+      - Texture (e.g., raised, scaly, smooth)
+      - Size (if context is available)
+      - Distribution (e.g., localized, widespread)
+      Output a bulleted list under the key "visual_analysis".
+
+  writer:
+    model: openai/gpt-4o-mini
+    description: Patient-friendly explainer.
+    instruction: |
+      Combine "intake", researcher notes, and "visual_analysis" into sections:
+      - What it might be (not a diagnosis)
+      - What you can do now
+      - Red flags — seek urgent care if…
+      - Questions to ask a clinician
+      - Sources (links)
+      Tone: concise, empathetic, plain language.
+
+  safety:
+    model: openai/gpt-4o-mini
+    description: Fact/risk checker and guardrails.
+    instruction: |
+      Remove speculative claims; check internal consistency and sources.
+      Add a clear disclaimer (educational, not medical advice).
+      If risk or uncertainty is high, recommend in-person care.
